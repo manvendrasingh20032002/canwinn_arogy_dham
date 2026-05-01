@@ -1,0 +1,321 @@
+/* 
+    CanWinn Premium Responsive System 
+    Targeting all sections for perfect mobile viewing
+*/
+
+/* Global Mobile Fixes */
+@media (max-width: 991px) {
+    html, body {
+        overflow-x: hidden !important;
+        position: relative;
+    }
+
+    section {
+        padding: 40px 0 !important; /* Reduced from 80px/100px */
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .display-1 { font-size: 2.5rem !important; }
+    .display-2 { font-size: 2.2rem !important; }
+    .display-3 { font-size: 2rem !important; }
+    .display-4 { font-size: 1.8rem !important; }
+    .display-5 { font-size: 1.6rem !important; }
+    
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.8rem !important; }
+    h3 { font-size: 1.6rem !important; }
+    
+    .container, .container-fluid {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* Navbar Responsive Fixes */
+@media (max-width: 991px) {
+    .navbar-brand img {
+        height: 40px !important;
+    }
+    
+    .navbar-collapse {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin-top: 10px;
+    }
+    
+    .navbar-nav {
+        padding: 10px 0;
+        text-align: left;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-link {
+        padding: 12px 0 !important;
+    }
+    
+    .nav-btns {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        gap: 10px;
+    }
+    
+    .btn-pro, .btn-success, .btn-gradient {
+        width: 100%;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+        text-align: center;
+    }
+}
+
+/* Hero Slider Mobile Fix */
+@media (max-width: 768px) {
+    .slider-img {
+        height: 60vh !important;
+    }
+    
+    .hero-content {
+        padding: 15px !important;
+        margin: 0 10px !important;
+        max-width: calc(100% - 20px) !important;
+    }
+    
+    .carousel-caption {
+        bottom: 10% !important;
+    }
+    
+    .carousel-caption h1, .hero-content h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .carousel-caption p, .hero-content p {
+        font-size: 0.85rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .btn-lg {
+        padding: 8px 20px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Healing Journey (Video Treatment) Section */
+@media (max-width: 991px) {
+    .premium-journey .row {
+        flex-direction: column-reverse;
+    }
+    
+    .video-card {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 30px;
+    }
+    
+    .video-card video {
+        height: 300px !important;
+    }
+    
+    .steps-container {
+        padding-left: 20px !important;
+    }
+    
+    .step-box {
+        margin-bottom: 25px !important;
+    }
+    
+    .step-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Polyclinic Pages (Map + Info) */
+@media (max-width: 768px) {
+    .aarogya-dham-content {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .map-container {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+    
+    .map-container iframe {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+    
+    .aarogya-dham-header h2 {
+        font-size: 28px !important;
+    }
+}
+
+/* Stats/Counter Section */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .stat-card {
+        padding: 20px 10px !important;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Video Testimonials Section */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .video-image {
+        height: 220px !important;
+    }
+    
+    .reviews-header h2 {
+        font-size: 32px !important;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 60px 0 20px !important;
+        text-align: center; /* Reverted to center */
+        border-top-left-radius: 30px !important;
+    }
+    
+    .footer-column {
+        margin-bottom: 40px;
+    }
+    
+    .footer-badges {
+        justify-content: center; /* Reverted to center */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .footer-badges img {
+        margin: 5px !important;
+    }
+    
+    .social-icons {
+        justify-content: center; /* Reverted to center */
+        display: flex;
+    }
+}
+
+/* Small Phone Fixes (Under 480px) */
+@media (max-width: 480px) {
+    .carousel-caption h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .saccha-sathi-banner h2 {
+        font-size: 24px !important;
+    }
+
+    .saccha-sathi-banner {
+        padding: 20px !important;
+    }
+}
+
+/* About Page Timeline Fix */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px !important;
+    }
+    
+    .timeline-dot {
+        left: 30px !important;
+        transform: translateX(-50%) !important;
+    }
+    
+    .timeline-item {
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+    
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+    
+    .about-hero, .services-hero {
+        padding: 60px 0 !important;
+    }
+    
+    .about-hero h1, .services-hero h1 {
+        font-size: 2.2rem !important;
+    }
+    
+    .about-hero p, .services-hero p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Polyclinic Hero Fix */
+@media (max-width: 768px) {
+    .hero-pro {
+        padding: 100px 0 120px !important;
+        border-radius: 0 0 30px 30px !important;
+    }
+    
+    .hero-pro h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .stats-overlap {
+        margin-top: -50px !important;
+    }
+}
+
+/* Extra Small Devices Fixes (Under 360px) */
+@media (max-width: 360px) {
+    .navbar-brand img {
+        height: 35px !important;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem !important;
+    }
+}
+

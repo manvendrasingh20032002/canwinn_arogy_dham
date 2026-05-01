@@ -1,0 +1,589 @@
+/* Global Reset & Responsiveness */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------Navbar Main Container ------------------*/
+.custom-navbar {
+    background: #fff;
+    padding: 12px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+/* Logo Animation */
+.navbar-brand img {
+    height: 55px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+/* Nav Links Modern Animation */
+.nav-item {
+    position: relative;
+    margin: 0 5px;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* The "Pro" Underline Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 15px;
+    background-color: #1cc88a;
+    /* Theme Green */
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-link:hover::after {
+    width: calc(100% - 30px);
+}
+
+.nav-link:hover {
+    color: #1cc88a !important;
+}
+
+/* Buttons Styling - Exactly like your screenshot */
+.nav-btns {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-pro {
+    border: 2px solid #1cc88a;
+    color: #1cc88a;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 8px 24px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    z-index: 1;
+}
+
+/* Filling Animation for Buttons */
+.btn-pro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #1cc88a;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn-pro:hover::before {
+    width: 100%;
+}
+
+.btn-pro:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(28, 200, 138, 0.3);
+}
+
+/* Active Link State */
+.nav-item.active .nav-link {
+    color: #1cc88a !important;
+}
+
+.nav-item.active .nav-link::after {
+    width: calc(100% - 30px);
+}
+
+
+/*---------------- Slider Images Height and Transition ------------------*/
+.slider-img {
+    height: 65vh;
+    background-size: cover !important;
+    background-position: center !important;
+    transition: transform 7s ease-in-out;
+    /* Zoom effect transition */
+}
+
+/* Slide Zoom Effect (Pro Touch) */
+.carousel-item.active .slider-img {
+    transform: scale(1.1);
+}
+
+/* Prevent Pause on Mouse Hover */
+.carousel {
+    pointer-events: none;
+    /* Controls will still work due to button z-index */
+}
+
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+    pointer-events: auto;
+}
+
+/* Animations for Text */
+.carousel-item h1 {
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------treatment video section ------------------*/
+:root {
+    --primary-blue: #007bff;
+    --soft-bg: #f8faff;
+}
+
+.premium-journey {
+    background: var(--soft-bg);
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Heading Style */
+.section-title h2 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+/* Video Container - Right Side */
+.video-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.video-card video {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Steps Layout - Left Side */
+.steps-container {
+    position: relative;
+    padding-left: 40px;
+}
+
+/* Vertical Line */
+.steps-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: #dee2e6;
+}
+
+.step-box {
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.4s ease;
+}
+
+.step-box.active {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Circle Indicator on Line */
+.step-box::before {
+    content: '';
+    position: absolute;
+    left: -46px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    z-index: 2;
+    transition: 0.3s;
+}
+
+.step-box.active::before {
+    background: var(--primary-blue);
+    box-shadow: 0 0 0 8px rgba(0, 123, 255, 0.1);
+}
+
+.step-content h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Smooth Progress Number */
+.step-number-big {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ------------- Our Services section ------------ */
+/* Section Styling */
+.premium-specialities {
+    background: #f8fbff;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.spec-header {
+    margin-bottom: 60px;
+}
+
+.spec-header h2 {
+    font-weight: 800;
+    font-size: 2.8rem;
+    color: #212529;
+}
+
+/* 5-Column Grid Fix */
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* Desktop par exact 5 cards */
+    gap: 25px;
+}
+
+/* Card Design */
+.spec-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #edf2f7;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.spec-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(13, 110, 253, 0.1);
+    border-color: #0d6efd;
+}
+
+/* Icon Container */
+.icon-wrapper {
+    width: 85px;
+    height: 85px;
+    background: #f0f7ff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.spec-card:hover .icon-wrapper {
+    background: #0d6efd;
+    transform: rotate(-5deg);
+}
+
+.icon-wrapper img,
+.icon-wrapper i {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    color: #0d6efd;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.spec-card:hover .icon-wrapper i {
+    color: #fff;
+}
+
+.spec-card h5 {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Responsive: 1 row mein kitne dikhenge */
+@media (max-width: 1200px) {
+    .custom-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Chote laptop par 4 */
+}
+
+@media (max-width: 992px) {
+    .custom-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Tablet par 3 */
+}
+
+@media (max-width: 768px) {
+    .custom-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------------- Seva Polyclinic ----------------------*/
+.opd-section {
+    background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+/* Circular Image Styling */
+.opd-img-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.main-opd-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Floating Badges Logic */
+.badge-float {
+    position: absolute;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #00bfa5;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    animation: float 3s ease-in-out infinite;
+}
+
+.opd-price {
+    top: 10%;
+    left: 15%;
+    background: #26a69a;
+}
+
+.dept-dentist {
+    top: 20%;
+    right: 0;
+}
+
+.dept-physio {
+    top: 50%;
+    right: -10%;
+}
+
+.dept-ecg {
+    bottom: 25%;
+    right: 0;
+}
+
+.dept-med {
+    bottom: 10%;
+    left: 25%;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Right Side Card Styling */
+.opd-list-card {
+    background: #fff;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.opd-features li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+
+.opd-features li i {
+    color: #00bfa5;
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
+.btn-primary-custom {
+    background: #00bfa5;
+    border: none;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+    background: #00897b;
+    transform: scale(1.02);
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 768px) {
+    .opd-img-wrapper {
+        width: 300px;
+        height: 300px;
+    }
+
+    .badge-float {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+
+
+/* ----------- Footer----------------- */
+/* Footer Styling */
+.main-footer {
+    background-color: #00261a;
+    /* Premium Dark Green from your screenshot */
+    color: #ffffff;
+    padding: 80px 0 30px;
+    font-family: 'Poppins', sans-serif;
+    border-top-left-radius: 50px;
+    /* Curvy top like screenshot */
+}
+
+.footer-column h4 {
+    color: #ffc107;
+    /* Gold/Yellow heading color */
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    color: #ffc107;
+    opacity: 1;
+    padding-left: 5px;
+}
+
+/* Contact Info */
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.contact-info i {
+    color: #ffc107;
+    margin-right: 10px;
+}
+
+/* Accreditations & Socials */
+.footer-badges img {
+    height: 60px;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffc107;
+    transform: translateY(-3px);
+}
+
+/* Copyright Bar */
+.copyright-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 25px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.copyright-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
