@@ -1,4 +1,4 @@
-﻿
+
 
 <style>
     .testimonials-form-section {
@@ -619,9 +619,11 @@
                 </div>
             `;
 
+            // No reload needed, just show success
             setTimeout(() => {
-                location.reload();
+                // Optionally reset the form or just let the success message stay
             }, 3000);
+
         })
         .catch(error => {
             alert('Error submitting review. Please try again.');

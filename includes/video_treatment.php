@@ -45,12 +45,17 @@
             </div>
 
             <div class="col-lg-7 order-1 order-lg-2">
-                <div class="video-card">
-                    <video id="stepVideo" muted playsinline autoplay loop>
+                <div class="video-card overflow-hidden rounded-4 shadow-lg bg-light" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <video id="stepVideo" muted playsinline autoplay loop class="w-100 h-100 object-fit-cover">
                         <source src="<?php echo BASE_URL; ?>assets/videos/8943635-hd_1920_1080_25fps.mp4" type="video/mp4">
                     </video>
+                    <!-- Fallback for missing videos -->
+                    <div id="videoFallback" style="display:none; width: 100%;">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80" alt="Healthcare" class="img-fluid w-100">
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -75,11 +80,24 @@ document.addEventListener('DOMContentLoaded', function() {
         if (videoSource.src !== newSrc) {
             videoSource.src = newSrc;
             video.load();
-            video.play();
+            
+            // Show video, hide fallback initially
+            video.style.display = 'block';
+            document.getElementById('videoFallback').style.display = 'none';
+            
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Video missing or blocked: ", error);
+                    video.style.display = 'none';
+                    document.getElementById('videoFallback').style.display = 'block';
+                });
+            }
         }
         
         currentStep = index;
     }
+
 
     // Click event for manual change
     steps.forEach((step, index) => {

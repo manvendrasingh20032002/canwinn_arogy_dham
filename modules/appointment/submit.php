@@ -65,17 +65,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ip_address = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 
     // SQL Query to insert into appointments table
+    $user_id = $_SESSION['user_id'] ?? 0;
     $sql = "INSERT INTO appointments (
-        appointment_id, patient_name, phone, email, age, gender, blood_group, 
+        user_id, appointment_id, patient_name, phone, email, age, gender, blood_group, 
         speciality, doctor_name, appointment_date, appointment_time, 
         appointment_type, polyclinic, symptoms, medical_history, 
         emergency_contact, emergency_phone, terms_agreed, ip_address
     ) VALUES (
-        '$appointment_id', '$patient_name', '$phone', '$email', '$age', '$gender', '$blood_group', 
+        '$user_id', '$appointment_id', '$patient_name', '$phone', '$email', '$age', '$gender', '$blood_group', 
         '$speciality', '$doctor_name', '$appointment_date', '$appointment_time', 
         '$appointment_type', '$polyclinic', '$symptoms', '$medical_history', 
         '$emergency_contact', '$emergency_phone', '$terms', '$ip_address'
     )";
+
 
     if (mysqli_query($conn, $sql)) {
         // Success response

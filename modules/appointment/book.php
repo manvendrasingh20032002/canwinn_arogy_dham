@@ -1,4 +1,8 @@
-<?php include_once('../../includes/header.php'); ?>
+<?php 
+include_once(__DIR__ . '/../../config/app.php');
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
+include_once('../../includes/header.php'); 
+?>
 
 <main>
     <!-- Hero Header -->
@@ -43,6 +47,7 @@
         </div>
     </section>
 
+
     <!-- Appointment Form Section -->
     <section class="py-5">
         <div class="container">
@@ -60,12 +65,13 @@
                                 <div class="row g-3 mb-4">
                                     <div class="col-md-6">
                                         <label for="patient_name" class="form-label">Full Name *</label>
-                                        <input type="text" class="form-control form-control-lg" id="patient_name" name="patient_name" required>
+                                        <input type="text" class="form-control form-control-lg" id="patient_name" name="patient_name" value="<?php echo $_SESSION['user_name'] ?? ''; ?>" placeholder="Your Full Name" required>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="phone" class="form-label">Phone Number *</label>
-                                        <input type="tel" class="form-control form-control-lg" id="phone" name="phone" required minlength="10" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" pattern="[0-9]{10}">
+                                        <input type="tel" class="form-control form-control-lg" id="phone" name="phone" value="<?php echo $_SESSION['user_phone'] ?? ''; ?>" <?php echo isset($_SESSION['user_phone']) ? 'readonly' : ''; ?> placeholder="10-digit number" required minlength="10" maxlength="10">
                                     </div>
+
                                     <div class="col-md-6">
                                         <label for="email" class="form-label">Email Address</label>
                                         <input type="email" class="form-control form-control-lg" id="email" name="email">
@@ -305,7 +311,17 @@
 
 <script>
 const appointmentForm = document.getElementById('appointmentForm');
+const isLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+
 appointmentForm.addEventListener('submit', function(e) {
+    if (!isLoggedIn) {
+        e.preventDefault();
+        if(confirm('You need to login first to confirm your appointment. Proceed to login?')) {
+            window.location.href = '<?php echo BASE_URL; ?>pages/login.php?redirect=appointment';
+        }
+        return false;
+    }
+    
     const dateInput = document.getElementById('appointment_date');
     const selectedDate = new Date(dateInput.value);
     const today = new Date();

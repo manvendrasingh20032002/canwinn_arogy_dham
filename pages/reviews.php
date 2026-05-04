@@ -1,13 +1,11 @@
 <?php include_once('../includes/header.php'); ?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
     :root {
         --p: #7b52ab; --t: #2bb3a3; --glow: rgba(43, 179, 163, 0.2);
     }
-    body { font-family: 'Poppins', sans-serif; background: #fcfdfe; }
+    body { background: #fcfdfe; }
 
     .review-wrapper { padding: 80px 0; overflow: hidden; }
     

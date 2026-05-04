@@ -39,22 +39,7 @@ html, body {
     transition: color 0.3s ease;
 }
 
-/* The "Pro" Underline Effect */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 5px;
-    left: 15px;
-    background-color: #1cc88a;
-    /* Theme Green */
-    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.nav-link:hover::after {
-    width: calc(100% - 30px);
-}
+/* The "Pro" Underline Effect - Removed */
 
 .nav-link:hover {
     color: #1cc88a !important;
@@ -106,11 +91,8 @@ html, body {
 
 /* Active Link State */
 .nav-item.active .nav-link {
-    color: #1cc88a !important;
-}
-
-.nav-item.active .nav-link::after {
-    width: calc(100% - 30px);
+    color: #2bb3a3 !important;
+    position: relative;
 }
 
 

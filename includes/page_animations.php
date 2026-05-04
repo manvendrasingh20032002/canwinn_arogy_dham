@@ -317,32 +317,42 @@
     function openVideoModal(videoUrl) {
         const modal = document.getElementById('videoModal');
         const frame = document.getElementById('videoFrame');
-        frame.src = videoUrl;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        if (modal && frame) {
+            frame.src = videoUrl;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     function closeVideoModal() {
         const modal = document.getElementById('videoModal');
         const frame = document.getElementById('videoFrame');
-        modal.classList.remove('active');
-        frame.src = '';
-        document.body.style.overflow = 'auto';
+        if (modal && frame) {
+            modal.classList.remove('active');
+            frame.src = '';
+            document.body.style.overflow = 'auto';
+        }
     }
 
-    // Close video on overlay click
-    document.getElementById('videoModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeVideoModal();
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoModal = document.getElementById('videoModal');
+        if (videoModal) {
+            // Close video on overlay click
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeVideoModal();
+                }
+            });
         }
+
+        // Close video on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
     });
 
-    // Close video on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeVideoModal();
-        }
-    });
 
     // Page Load Animation
     window.addEventListener('load', function() {

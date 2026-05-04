@@ -11,25 +11,54 @@
 
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="navbar-nav ms-auto align-items-lg-center">
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>pages/about.php">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>pages/services.php">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>pages/career.php">Career</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>pages/reviews.php">Reviews</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo BASE_URL; ?>pages/contact.php">Contact</a></li>
-                <li class="nav-item">
-                    <a class="nav-link text-primary fw-bold" href="<?php echo BASE_URL; ?>pages/members.php">Become a Member</a>
+                <li class="nav-item <?php echo ($currentPage == 'index.php' || $currentPage == '') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>">Home</a>
                 </li>
+                <li class="nav-item <?php echo ($currentPage == 'about.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/about.php">About</a>
+                </li>
+                <li class="nav-item <?php echo ($currentPage == 'services.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/services.php">Services</a>
+                </li>
+                <li class="nav-item <?php echo ($currentPage == 'career.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/career.php">Career</a>
+                </li>
+                <li class="nav-item <?php echo ($currentPage == 'reviews.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/reviews.php">Reviews</a>
+                </li>
+                <li class="nav-item <?php echo ($currentPage == 'contact.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/contact.php">Contact</a>
+                </li>
+                <li class="nav-item <?php echo ($currentPage == 'members.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/members.php">Become a Member</a>
+                </li>
+
                 <li class="nav-item mt-3 mt-lg-0">
                     <a class="btn btn-success text-white rounded-pill px-4 me-2" href="<?php echo BASE_URL; ?>modules/appointment/book.php">
                         <i class="fas fa-calendar-plus me-1"></i>Book Doctor
                     </a>
                 </li>
+                
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <a class="btn btn-outline-primary rounded-pill px-4 me-2" href="<?php echo BASE_URL; ?>pages/profile.php">
+                            <i class="fas fa-user-circle me-1"></i> My Profile
+                        </a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item mt-3 mt-lg-0">
+                        <a class="btn btn-outline-primary rounded-pill px-4 me-2" href="<?php echo BASE_URL; ?>pages/login.php">
+                            <i class="fas fa-sign-in-alt me-1"></i> Login
+                        </a>
+                    </li>
+                <?php endif; ?>
+
                 <li class="nav-item mt-3 mt-lg-0">
                     <button class="btn btn-gradient text-white rounded-pill px-4" id="feedbackBtn" title="Share your feedback">
                         <i class="fas fa-heart me-1"></i>Feedback
                     </button>
                 </li>
+
             </ul>
         </div>
     </div>

@@ -1,8 +1,13 @@
-<?php include_once(__DIR__ . '/includes/header.php'); ?>
+<?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include_once(__DIR__ . '/includes/header.php'); 
+?>
 <?php include('includes/hero_slider.php'); ?>
 <?php include('includes/video_treatment.php'); ?>
 <?php include('includes/our_services.php'); ?>
-<?php include('includes/Dr. Details.php'); ?>
+<?php include('includes/dr_details.php'); ?>
 <?php include('includes/stats_section.php'); ?>
 <?php include('includes/video_map_section.php'); ?>
 <?php include('includes/our_founders.php'); ?>

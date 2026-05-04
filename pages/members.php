@@ -13,16 +13,13 @@ if (file_exists($header)) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
     :root { 
         --p-color: #7b52ab; 
         --t-color: #2bb3a3; 
         --bg-soft: #f4f7f6; 
     }
-    
-    body { font-family: 'Poppins', sans-serif; background: var(--bg-soft); overflow-x: hidden; }
+    body { background: var(--bg-soft); overflow-x: hidden; }
 
     .membership-section { padding: 80px 0; }
 
