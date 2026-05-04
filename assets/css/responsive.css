@@ -85,35 +85,11 @@
     }
 }
 
-/* Hero Slider Mobile Fix */
+/* Hero Slider Mobile Fix - Moved control to hero_slider.php for better precision */
 @media (max-width: 768px) {
     .slider-img {
-        height: 60vh !important;
-    }
-    
-    .hero-content {
-        padding: 15px !important;
-        margin: 0 10px !important;
-        max-width: calc(100% - 20px) !important;
-    }
-    
-    .carousel-caption {
-        bottom: 10% !important;
-    }
-    
-    .carousel-caption h1, .hero-content h1 {
-        font-size: 1.5rem !important;
-        line-height: 1.2 !important;
-    }
-    
-    .carousel-caption p, .hero-content p {
-        font-size: 0.85rem !important;
-        margin-bottom: 10px !important;
-    }
-
-    .btn-lg {
-        padding: 8px 20px !important;
-        font-size: 0.9rem !important;
+        height: auto !important;
+        aspect-ratio: 16 / 13;
     }
 }
 

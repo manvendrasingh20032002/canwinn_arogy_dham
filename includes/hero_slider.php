@@ -95,37 +95,46 @@
     .carousel-item,
     .slider-img {
         height: auto !important;
-        aspect-ratio: 16 / 11; /* Keep it proportional */
+        aspect-ratio: 16 / 13; /* Increased height ratio for better balance */
     }
     
     .carousel-item .container {
-        align-items: center; /* Center vertically on mobile */
-        justify-content: center;
+        align-items: center; 
+        justify-content: flex-start; /* Aligned to left */
         padding-bottom: 0;
     }
 
     .hero-content {
-        padding: 15px 20px; /* Small padding for small container */
-        margin: 0 auto;
-        max-width: 85%; /* Compact width */
-        border-radius: 20px;
-        text-align: center;
+        padding: 12px 15px;
+        margin-left: 15px; 
+        max-width: 48%; /* Fixed to less than half screen */
+        border-radius: 15px;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
     }
     
     .hero-content h1 {
-        font-size: 1.4rem !important;
-        margin-bottom: 5px;
+        font-size: 1.1rem !important;
+        margin-bottom: 4px;
+        line-height: 1.1;
+        font-weight: 800;
     }
     
     .hero-content p {
-        font-size: 0.85rem !important;
-        margin-bottom: 12px;
-        line-height: 1.4;
+        font-size: 0.65rem !important;
+        margin-bottom: 10px;
+        line-height: 1.3;
+        color: #333;
+        font-weight: 500;
     }
 
     .hero-btn {
-        padding: 8px 20px;
-        font-size: 0.85rem;
+        padding: 6px 15px;
+        font-size: 0.65rem;
+        border-radius: 30px;
     }
 }
 </style>
@@ -167,7 +176,21 @@
         <!-- Slide 3 -->
         <div class="carousel-item">
             <div class="slider-img"
-                 style="background-image: url('<?php echo BASE_URL; ?>assets/images/cf72b0aa-e0c0-4037-a45b-a416aada1e2b.png');">
+                 style="background-image: url('<?php echo BASE_URL; ?>assets/images/Gemini_Generated_Image_r4hlacr4hlacr4hl.png');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Modern <span>Facilities</span></h1>
+                        <p>Equipped with state-of-the-art medical technology to ensure accurate diagnostics.</p>
+                        <a href="<?php echo BASE_URL; ?>pages/about.php" class="hero-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Slide 4 -->
+        <div class="carousel-item">
+            <div class="slider-img"
+                 style="background-image: url('<?php echo BASE_URL; ?>assets/images/canwinn-polyclinic-delhi-clinics-kccem392be.webp');">
                 <div class="container">
                     <div class="hero-content">
                         <h1>Modern <span>Facilities</span></h1>

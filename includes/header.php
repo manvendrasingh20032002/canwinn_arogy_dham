@@ -1,4 +1,8 @@
 <?php 
+// session_start must be at the very top
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // config/app.php ko load karne ke liye
 include_once(__DIR__ . '/../config/app.php'); 
 ?>
@@ -10,15 +14,41 @@ include_once(__DIR__ . '/../config/app.php');
     <title>Canwinn Arogya Dham</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/responsive.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css?v=1.1">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/responsive.css?v=1.1">
+    <style>
+        /* Force AOS visibility if JS fails or loading is slow */
+        [data-aos] { opacity: 1 !important; transform: none !important; }
+        
+        .navbar-nav .nav-link {
+            padding: 0.5rem 0.7rem !important;
+            font-size: 0.95rem !important;
+            font-weight: 700 !important;
+            color: #222 !important;
+            text-transform: capitalize;
+            white-space: nowrap !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #2bb3a3 !important;
+        }
+        .btn-gradient, .btn-success {
+            padding: 0.5rem 1.2rem !important;
+            font-size: 0.9rem !important;
+            font-weight: 700 !important;
+            white-space: nowrap !important;
+        }
+        @media (max-width: 1400px) {
+            .navbar-nav .nav-link { font-size: 0.82rem !important; padding: 0.5rem 0.3rem !important; }
+            .btn-gradient, .btn-success { padding: 0.4rem 0.8rem !important; font-size: 0.8rem !important; }
+        }
+    </style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
 </head>
 <body>
-<?php include_once(__DIR__ . '/page_animations.php'); ?>
 <?php include_once(__DIR__ . '/navbar.php'); ?>
 
 
